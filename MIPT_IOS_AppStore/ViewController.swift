@@ -12,19 +12,23 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var calendarLabel: UILabel!
     
+    @IBOutlet weak var navBar: UINavigationItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        let date = Date()
+        
         let dateFormatter = DateFormatter()
-//        dateFormatter.timeStyle = .none
-//        dateFormatter.dateStyle = .medium
         dateFormatter.dateFormat = "EEEE, dd MMMM"
         dateFormatter.locale = Locale(identifier: "ru_RU")
-//        dateFormatter.doesRelativeDateFormatting = true
         
-        let result = dateFormatter.string(from: date).uppercased()
-        calendarLabel.text = result
+        let curDate = dateFormatter.string(from: Date()).uppercased()
+        calendarLabel.text = curDate
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.isNavigationBarHidden = true
     }
 
 

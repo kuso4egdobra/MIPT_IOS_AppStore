@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var navBar: UINavigationItem!
     
+    @IBOutlet weak var tableApps: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,6 +25,8 @@ class ViewController: UIViewController {
         
         let curDate = dateFormatter.string(from: Date()).uppercased()
         calendarLabel.text = curDate
+        
+//        tableApps.numberOfSections(0)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,7 +34,6 @@ class ViewController: UIViewController {
         
         self.navigationController?.isNavigationBarHidden = true
     }
-
 
 }
 

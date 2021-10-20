@@ -131,8 +131,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugA-6u-UdS">
-                                <rect key="frame" x="140" y="190" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="140" y="190" width="72" height="30"/>
+                                <state key="normal" title="Загрузить"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

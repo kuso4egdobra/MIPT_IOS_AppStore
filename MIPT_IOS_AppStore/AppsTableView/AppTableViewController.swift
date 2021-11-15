@@ -10,11 +10,16 @@ import UIKit
 
 class AppTableViewController: UITableViewController {
 
-    let dataSource = [
-        App(name: "youtube", type: "video", logoName: "youtube"),
-        App(name: "whatsapp", type: "social", logoName: "whatsapp"),
-        App(name: "playmarket", type: "shop", logoName: "playmarket"),
-    ]
+//    let dataSource = [
+//        App(name: "youtube", type: "video", logoName: "youtube"),
+//        App(name: "whatsapp", type: "social", logoName: "whatsapp"),
+//        App(name: "playmarket", type: "shop", logoName: "playmarket"),
+//    ]
+    private var apps: [App]!
+    
+    func setApps(apps: [App]) {
+        self.apps = apps
+    }
     
     @IBOutlet var appTableView: UITableView!
     
@@ -25,7 +30,7 @@ class AppTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.isNavigationBarHidden = false
     }
 
     // MARK: - Table view data source
@@ -37,15 +42,15 @@ class AppTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return dataSource.count
+        return apps.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! AppTableViewCell
 
-        cell.cellLabel.text = dataSource[indexPath.row].name
-        cell.typeLabel.text = dataSource[indexPath.row].type
-        cell.imageCell.image = UIImage(named: dataSource[indexPath.row].logoName)
+        cell.cellLabel.text = apps[indexPath.row].name
+        cell.typeLabel.text = apps[indexPath.row].type
+        cell.imageCell.image = UIImage(named: apps[indexPath.row].logoName)
 //        cell.backgroundColor = .red
 //        cell.imageCell.contentMode = .scaleToFill
         
@@ -59,7 +64,7 @@ class AppTableViewController: UITableViewController {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let appDetailViewController = storyBoard.instantiateViewController(withIdentifier: "appDetailViewController") as! AppDetailViewController
         let numApp = indexPath[1]
-        appDetailViewController.setApp(app: dataSource[numApp])
+        appDetailViewController.setApp(app: apps[numApp])
         show(appDetailViewController, sender: self)
     }
 

@@ -50,17 +50,29 @@ class GroupAppsViewController: UIViewController {
         tableView.estimatedRowHeight = 85.0
         tableView.rowHeight = UITableView.automaticDimension
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.isNavigationBarHidden = true
+    }
 }
 
+
 extension GroupAppsViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("tapped cell")
+    func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let appDetailViewController = storyBoard.instantiateViewController(withIdentifier: "appTableViewController") as! AppTableViewController
+       
         if (tableView == self.tableView) {
-            print(3)
+            let numApp = indexPath[1]
+            appDetailViewController.setApps(apps: dataSource[numApp].apps)
+        } else {
+            let subTableView = tableView as! SubGroupTableView
+            appDetailViewController.setApps(apps: dataSource[subTableView.numRow].apps)
         }
-        else {
-            print(4)
-        }
+        
+        show(appDetailViewController, sender: self)
     }
 }
 

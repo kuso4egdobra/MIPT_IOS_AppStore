@@ -18,6 +18,11 @@
 		CAECF62C2720523100E3A457 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAECF62B2720523100E3A457 /* App.swift */; };
 		CAECF62E2720524400E3A457 /* AppDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAECF62D2720524400E3A457 /* AppDetail.swift */; };
 		CAECF6312720574C00E3A457 /* AppDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAECF6302720574C00E3A457 /* AppDetailViewController.swift */; };
+		CAFDCA9A2741422900124BDA /* GroupAppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFDCA992741422900124BDA /* GroupAppsViewController.swift */; };
+		CAFDCA9E274215DF00124BDA /* GroupAppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFDCA9D274215DF00124BDA /* GroupAppTableViewCell.swift */; };
+		CAFDCAA0274221D300124BDA /* GroupApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFDCA9F274221D300124BDA /* GroupApp.swift */; };
+		CAFDCAA6274233CB00124BDA /* SubGroupTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFDCAA5274233CB00124BDA /* SubGroupTableView.swift */; };
+		CAFDCAA82742348600124BDA /* SubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFDCAA72742348600124BDA /* SubTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +39,11 @@
 		CAECF62B2720523100E3A457 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		CAECF62D2720524400E3A457 /* AppDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetail.swift; sourceTree = "<group>"; };
 		CAECF6302720574C00E3A457 /* AppDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailViewController.swift; sourceTree = "<group>"; };
+		CAFDCA992741422900124BDA /* GroupAppsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupAppsViewController.swift; sourceTree = "<group>"; };
+		CAFDCA9D274215DF00124BDA /* GroupAppTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupAppTableViewCell.swift; sourceTree = "<group>"; };
+		CAFDCA9F274221D300124BDA /* GroupApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupApp.swift; sourceTree = "<group>"; };
+		CAFDCAA5274233CB00124BDA /* SubGroupTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubGroupTableView.swift; sourceTree = "<group>"; };
+		CAFDCAA72742348600124BDA /* SubTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +76,7 @@
 		CAE0C6DA271D84D100FEC9C1 /* MIPT_IOS_AppStore */ = {
 			isa = PBXGroup;
 			children = (
+				CAFDCA98274141F400124BDA /* GroupApps */,
 				CAECF62F2720570D00E3A457 /* AppDetailView */,
 				CAECF62A272051FA00E3A457 /* Entity */,
 				CAE243D6271F2FF60021392D /* AppsTableView */,
@@ -94,6 +105,7 @@
 			children = (
 				CAECF62B2720523100E3A457 /* App.swift */,
 				CAECF62D2720524400E3A457 /* AppDetail.swift */,
+				CAFDCA9F274221D300124BDA /* GroupApp.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -104,6 +116,17 @@
 				CAECF6302720574C00E3A457 /* AppDetailViewController.swift */,
 			);
 			path = AppDetailView;
+			sourceTree = "<group>";
+		};
+		CAFDCA98274141F400124BDA /* GroupApps */ = {
+			isa = PBXGroup;
+			children = (
+				CAFDCA992741422900124BDA /* GroupAppsViewController.swift */,
+				CAFDCA9D274215DF00124BDA /* GroupAppTableViewCell.swift */,
+				CAFDCAA5274233CB00124BDA /* SubGroupTableView.swift */,
+				CAFDCAA72742348600124BDA /* SubTableViewCell.swift */,
+			);
+			path = GroupApps;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,7 +200,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAFDCAA0274221D300124BDA /* GroupApp.swift in Sources */,
+				CAFDCA9A2741422900124BDA /* GroupAppsViewController.swift in Sources */,
 				CA80B313271DAC7000085279 /* AppViewController.swift in Sources */,
+				CAFDCA9E274215DF00124BDA /* GroupAppTableViewCell.swift in Sources */,
+				CAFDCAA82742348600124BDA /* SubTableViewCell.swift in Sources */,
+				CAFDCAA6274233CB00124BDA /* SubGroupTableView.swift in Sources */,
 				CAE243DA271F313F0021392D /* AppTableViewCell.swift in Sources */,
 				CAE0C6DE271D84D100FEC9C1 /* ViewController.swift in Sources */,
 				CAECF6312720574C00E3A457 /* AppDetailViewController.swift in Sources */,

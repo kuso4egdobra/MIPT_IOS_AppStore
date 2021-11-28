@@ -35,7 +35,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ccq-99-jSY" customClass="SubGroupTableView" customModule="MIPT_IOS_AppStore" customModuleProvider="target">
-                                <rect key="frame" x="8" y="178" width="398" height="684"/>
+                                <rect key="frame" x="8" y="178" width="398" height="635"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="236" id="wNA-8E-aSK" customClass="GroupAppTableViewCell" customModule="MIPT_IOS_AppStore" customModuleProvider="target">
@@ -61,7 +61,7 @@
                                                     <rect key="frame" x="28" y="78" width="358" height="155"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="155" id="noV-9m-CJ9"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="155" id="noV-9m-CJ9"/>
                                                     </constraints>
                                                     <prototypes>
                                                         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="urX-8c-kIO" customClass="AppTableViewCell" customModule="MIPT_IOS_AppStore" customModuleProvider="target">
@@ -157,12 +157,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0u-DP-083">
+                                <rect key="frame" x="358" y="104" width="48" height="48"/>
+                                <state key="normal" image="cancel"/>
+                                <connections>
+                                    <action selector="onCancelButtonClicked:" destination="3zO-b0-fXe" eventType="touchUpInside" id="NW3-9x-mFl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="xPo-fK-bUg" firstAttribute="top" secondItem="jUH-mr-6oq" secondAttribute="top" constant="16" id="0iv-aA-Biw"/>
+                            <constraint firstItem="jUH-mr-6oq" firstAttribute="trailing" secondItem="S0u-DP-083" secondAttribute="trailing" constant="8" id="1gi-GA-m1L"/>
                             <constraint firstItem="Tvw-il-dCF" firstAttribute="leading" secondItem="jUH-mr-6oq" secondAttribute="leading" constant="8" id="2vi-bC-rAn"/>
                             <constraint firstItem="jUH-mr-6oq" firstAttribute="trailing" secondItem="ccq-99-jSY" secondAttribute="trailing" constant="8" id="4J4-9W-yDo"/>
+                            <constraint firstItem="S0u-DP-083" firstAttribute="top" secondItem="jUH-mr-6oq" secondAttribute="top" id="DCx-Kb-3oz"/>
                             <constraint firstItem="ccq-99-jSY" firstAttribute="bottom" secondItem="jUH-mr-6oq" secondAttribute="bottom" id="GOx-l3-9mx"/>
                             <constraint firstItem="ccq-99-jSY" firstAttribute="leading" secondItem="jUH-mr-6oq" secondAttribute="leading" constant="8" id="Hwe-gp-dCR"/>
                             <constraint firstItem="jUH-mr-6oq" firstAttribute="trailing" secondItem="yyM-XQ-C3K" secondAttribute="trailing" constant="8" id="T6r-Fc-ezd"/>
@@ -170,14 +179,20 @@
                             <constraint firstItem="Tvw-il-dCF" firstAttribute="top" secondItem="xPo-fK-bUg" secondAttribute="bottom" constant="8" id="dO3-fc-bc7"/>
                             <constraint firstItem="yyM-XQ-C3K" firstAttribute="top" secondItem="jUH-mr-6oq" secondAttribute="top" constant="16" id="jTM-M0-iZv"/>
                             <constraint firstItem="xPo-fK-bUg" firstAttribute="leading" secondItem="jUH-mr-6oq" secondAttribute="leading" constant="8" id="qfh-7q-714"/>
+                            <constraint firstItem="S0u-DP-083" firstAttribute="top" secondItem="jUH-mr-6oq" secondAttribute="top" constant="16" id="tL0-9J-KnE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jUH-mr-6oq"/>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="f4U-jr-mos"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="avatarImageView" destination="yyM-XQ-C3K" id="kRJ-tI-fwy"/>
+                        <outlet property="cancelButton" destination="S0u-DP-083" id="5xT-BS-foj"/>
+                        <outlet property="mainTableViewTopConstraint" destination="YWj-cJ-i83" id="0Qd-eD-oeE"/>
                         <outlet property="tableView" destination="ccq-99-jSY" id="aIh-hb-zR2"/>
                         <outlet property="todayDateLabel" destination="xPo-fK-bUg" id="rar-B0-g15"/>
+                        <outlet property="todayLabel" destination="Tvw-il-dCF" id="8re-6B-cd7"/>
                         <segue destination="2pP-mn-ZKN" kind="show" id="CY5-X3-2R5"/>
                     </connections>
                 </viewController>
@@ -446,6 +461,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cancel" width="48" height="48"/>
         <image name="youtube" width="900" height="600"/>
     </resources>
 </document>

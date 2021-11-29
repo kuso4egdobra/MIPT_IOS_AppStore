@@ -35,7 +35,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ccq-99-jSY" customClass="SubGroupTableView" customModule="MIPT_IOS_AppStore" customModuleProvider="target">
-                                <rect key="frame" x="8" y="178" width="398" height="635"/>
+                                <rect key="frame" x="8" y="160" width="398" height="653"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="236" id="wNA-8E-aSK" customClass="GroupAppTableViewCell" customModule="MIPT_IOS_AppStore" customModuleProvider="target">
@@ -72,23 +72,23 @@
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FV6-PD-DL5">
-                                                                        <rect key="frame" x="42" y="0.0" width="94.5" height="21"/>
+                                                                        <rect key="frame" x="48" y="0.0" width="94.5" height="21"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdn-Pt-8zP">
-                                                                        <rect key="frame" x="42" y="24.5" width="59.5" height="13.5"/>
+                                                                        <rect key="frame" x="48" y="30" width="59.5" height="13.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7k7-O4-UdP">
-                                                                        <rect key="frame" x="270" y="4" width="72" height="30"/>
+                                                                        <rect key="frame" x="270" y="4" width="72" height="35.5"/>
                                                                         <state key="normal" title="Загрузить"/>
                                                                     </button>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="youtube" translatesAutoresizingMaskIntoConstraints="NO" id="l7l-xs-TPQ">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                                        <rect key="frame" x="0.0" y="3.5" width="40" height="40"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="40" id="hQ7-Zx-nvQ"/>
                                                                             <constraint firstAttribute="width" constant="40" id="z3g-k4-7w0"/>
@@ -96,15 +96,14 @@
                                                                     </imageView>
                                                                 </subviews>
                                                                 <constraints>
-                                                                    <constraint firstItem="l7l-xs-TPQ" firstAttribute="top" secondItem="sN9-nV-doh" secondAttribute="top" id="28K-4P-CXF"/>
                                                                     <constraint firstAttribute="bottom" secondItem="fdn-Pt-8zP" secondAttribute="bottom" id="32p-bT-1MW"/>
-                                                                    <constraint firstItem="FV6-PD-DL5" firstAttribute="leading" secondItem="l7l-xs-TPQ" secondAttribute="trailing" constant="2" id="89e-lL-70P"/>
-                                                                    <constraint firstItem="l7l-xs-TPQ" firstAttribute="top" secondItem="sN9-nV-doh" secondAttribute="top" id="Gcw-RQ-DKw"/>
+                                                                    <constraint firstItem="FV6-PD-DL5" firstAttribute="leading" secondItem="l7l-xs-TPQ" secondAttribute="trailing" constant="8" id="89e-lL-70P"/>
                                                                     <constraint firstItem="l7l-xs-TPQ" firstAttribute="leading" secondItem="sN9-nV-doh" secondAttribute="leading" id="PKH-gG-VFd"/>
-                                                                    <constraint firstItem="fdn-Pt-8zP" firstAttribute="leading" secondItem="l7l-xs-TPQ" secondAttribute="trailing" constant="2" id="PZm-0t-sco"/>
+                                                                    <constraint firstItem="fdn-Pt-8zP" firstAttribute="leading" secondItem="l7l-xs-TPQ" secondAttribute="trailing" constant="8" id="PZm-0t-sco"/>
                                                                     <constraint firstItem="l7l-xs-TPQ" firstAttribute="leading" secondItem="sN9-nV-doh" secondAttribute="leading" id="R0K-ku-d4a"/>
                                                                     <constraint firstItem="7k7-O4-UdP" firstAttribute="top" secondItem="sN9-nV-doh" secondAttribute="top" constant="4" id="Xaq-4s-wIh"/>
                                                                     <constraint firstItem="FV6-PD-DL5" firstAttribute="top" secondItem="sN9-nV-doh" secondAttribute="top" id="YRc-Jc-aA5"/>
+                                                                    <constraint firstItem="l7l-xs-TPQ" firstAttribute="top" secondItem="sN9-nV-doh" secondAttribute="top" constant="3.5" id="knD-6P-5Ie"/>
                                                                     <constraint firstAttribute="bottom" secondItem="7k7-O4-UdP" secondAttribute="bottom" constant="4" id="meS-Ve-BXy"/>
                                                                     <constraint firstAttribute="bottom" secondItem="l7l-xs-TPQ" secondAttribute="bottom" id="v9z-8h-fq4"/>
                                                                     <constraint firstAttribute="trailing" secondItem="7k7-O4-UdP" secondAttribute="trailing" constant="16" id="yod-Ly-pPs"/>
@@ -158,7 +157,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0u-DP-083">
-                                <rect key="frame" x="358" y="104" width="48" height="48"/>
+                                <rect key="frame" x="366" y="96" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="2sw-Uc-LaP"/>
+                                    <constraint firstAttribute="height" constant="40" id="ePv-OB-H6k"/>
+                                </constraints>
                                 <state key="normal" image="cancel"/>
                                 <connections>
                                     <action selector="onCancelButtonClicked:" destination="3zO-b0-fXe" eventType="touchUpInside" id="NW3-9x-mFl"/>
@@ -171,15 +174,14 @@
                             <constraint firstItem="jUH-mr-6oq" firstAttribute="trailing" secondItem="S0u-DP-083" secondAttribute="trailing" constant="8" id="1gi-GA-m1L"/>
                             <constraint firstItem="Tvw-il-dCF" firstAttribute="leading" secondItem="jUH-mr-6oq" secondAttribute="leading" constant="8" id="2vi-bC-rAn"/>
                             <constraint firstItem="jUH-mr-6oq" firstAttribute="trailing" secondItem="ccq-99-jSY" secondAttribute="trailing" constant="8" id="4J4-9W-yDo"/>
-                            <constraint firstItem="S0u-DP-083" firstAttribute="top" secondItem="jUH-mr-6oq" secondAttribute="top" id="DCx-Kb-3oz"/>
                             <constraint firstItem="ccq-99-jSY" firstAttribute="bottom" secondItem="jUH-mr-6oq" secondAttribute="bottom" id="GOx-l3-9mx"/>
                             <constraint firstItem="ccq-99-jSY" firstAttribute="leading" secondItem="jUH-mr-6oq" secondAttribute="leading" constant="8" id="Hwe-gp-dCR"/>
                             <constraint firstItem="jUH-mr-6oq" firstAttribute="trailing" secondItem="yyM-XQ-C3K" secondAttribute="trailing" constant="8" id="T6r-Fc-ezd"/>
-                            <constraint firstItem="ccq-99-jSY" firstAttribute="top" secondItem="Tvw-il-dCF" secondAttribute="bottom" constant="24" id="YWj-cJ-i83"/>
+                            <constraint firstItem="ccq-99-jSY" firstAttribute="top" secondItem="Tvw-il-dCF" secondAttribute="bottom" constant="6" id="YWj-cJ-i83"/>
                             <constraint firstItem="Tvw-il-dCF" firstAttribute="top" secondItem="xPo-fK-bUg" secondAttribute="bottom" constant="8" id="dO3-fc-bc7"/>
+                            <constraint firstItem="S0u-DP-083" firstAttribute="top" secondItem="jUH-mr-6oq" secondAttribute="top" constant="8" id="fmz-9q-4e6"/>
                             <constraint firstItem="yyM-XQ-C3K" firstAttribute="top" secondItem="jUH-mr-6oq" secondAttribute="top" constant="16" id="jTM-M0-iZv"/>
                             <constraint firstItem="xPo-fK-bUg" firstAttribute="leading" secondItem="jUH-mr-6oq" secondAttribute="leading" constant="8" id="qfh-7q-714"/>
-                            <constraint firstItem="S0u-DP-083" firstAttribute="top" secondItem="jUH-mr-6oq" secondAttribute="top" constant="16" id="tL0-9J-KnE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jUH-mr-6oq"/>
                     </view>
@@ -462,6 +464,6 @@
     </scenes>
     <resources>
         <image name="cancel" width="48" height="48"/>
-        <image name="youtube" width="900" height="600"/>
+        <image name="youtube" width="505" height="505"/>
     </resources>
 </document>

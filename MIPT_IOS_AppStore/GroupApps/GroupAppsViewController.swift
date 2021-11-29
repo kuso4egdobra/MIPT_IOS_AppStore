@@ -16,6 +16,7 @@ class GroupAppsViewController: UIViewController {
     var flag: Bool = true
     @IBOutlet weak var cancelButton: UIButton!
     var openedSubTableView: UITableView!
+    let GLOBAL_BACKGROUND_COLOR: UIColor = UIColor(red:230/255, green: 230/255, blue: 230/255, alpha: 1.000)
     
     @IBOutlet weak var mainTableViewTopConstraint: NSLayoutConstraint!
     let dataSource = [
@@ -24,11 +25,10 @@ class GroupAppsViewController: UIViewController {
             title2: "Приложения недели",
             apps: [
                 App(name: "youtube", type: "video", logoName: "youtube"),
-                App(name: "youtube", type: "video", logoName: "youtube"),
-                App(name: "youtube", type: "video", logoName: "youtube"),
-                App(name: "youtube", type: "video", logoName: "youtube"),
-                App(name: "youtube", type: "video", logoName: "youtube"),
-                App(name: "youtube", type: "video", logoName: "youtube"),
+                App(name: "instagram", type: "social", logoName: "instagram"),
+                App(name: "snapchat", type: "social", logoName: "snapchat"),
+                App(name: "whatsapp", type: "video", logoName: "whatsapp"),
+                App(name: "playmarket", type: "social", logoName: "playmarket")
             ]),
         GroupApps(
             title1: "Группа №2",
@@ -48,6 +48,9 @@ class GroupAppsViewController: UIViewController {
         
         let curDate = dateFormatter.string(from: Date()).uppercased()
         todayDateLabel.text = curDate
+        todayDateLabel.textColor = .gray
+        todayDateLabel.font = .systemFont(ofSize: 12, weight: .medium)
+        todayLabel.font = .systemFont(ofSize: 32, weight: .heavy)
         
         avatarImageView.image = UIImage(named: "avatar")
         avatarImageView.contentMode = .scaleToFill
@@ -62,6 +65,9 @@ class GroupAppsViewController: UIViewController {
         tableView.separatorStyle = .none
         
         cancelButton.alpha = 0
+        
+        self.view.backgroundColor = GLOBAL_BACKGROUND_COLOR
+        self.tableView.backgroundColor = GLOBAL_BACKGROUND_COLOR
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -185,13 +191,19 @@ extension GroupAppsViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! GroupAppTableViewCell
             
             cell.title1.text = dataSource[indexPath.row].title1
+            cell.title1.textColor = .gray
+            cell.title1.font = .systemFont(ofSize: 16, weight: .medium)
             cell.title2.text = dataSource[indexPath.row].title2
+            cell.title2.font = .systemFont(ofSize: 24, weight: .heavy)
+            
             
             cell.subTable.delegate = self
             cell.subTable.dataSource = self
             cell.subTable.numRow = indexPath.row
             print("num row \(indexPath.row)")
             cell.selectionStyle = .none
+            
+            cell.layer.cornerRadius = 8
             
             return cell
         }
@@ -204,8 +216,14 @@ extension GroupAppsViewController: UITableViewDataSource {
             
             print("for num row \(subTableView.numRow)")
             cell.cellLabel.text = dataSource[subTableView.numRow].apps[indexPath.row].name
+            cell.cellLabel.font = .systemFont(ofSize: 16, weight: .medium)
+            
             cell.typeLabel.text = dataSource[subTableView.numRow].apps[indexPath.row].type
+            cell.typeLabel.font = .systemFont(ofSize: 12, weight: .medium)
+            cell.typeLabel.textColor = .gray
+            
             cell.imageCell.image = UIImage(named: dataSource[subTableView.numRow].apps[indexPath.row].logoName)
+            cell.imageCell.layer.cornerRadius = 8.0
             
             cell.selectionStyle = .none
             

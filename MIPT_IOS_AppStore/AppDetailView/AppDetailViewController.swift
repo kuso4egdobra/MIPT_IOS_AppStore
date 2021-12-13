@@ -14,6 +14,10 @@ class AppDetailViewController: UIViewController {
     
     @IBOutlet weak var appNameLabel: UILabel!
     @IBOutlet weak var appImageView: UIImageView!
+    @IBOutlet weak var companyName: UILabel!
+    @IBOutlet weak var downloadButton: UIButton!
+    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var descriptionView: UITextView!
     
     func setApp(app: App) {
         self.app = app
@@ -22,8 +26,23 @@ class AppDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         appNameLabel.text = app?.name
+        appNameLabel.font = .systemFont(ofSize: 32, weight: .medium)
+        
+        companyName.text = app?.companyName
+        companyName.font = .systemFont(ofSize: 16, weight: .light)
+        companyName.textColor = .gray
         
         appImageView.image = UIImage(named: app?.logoName ?? "Image")
+        appImageView.layer.cornerRadius = 16.0
+    
+        downloadButton.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
+        downloadButton.layer.cornerRadius = 16.0
+        
+        shareButton.setImage(UIImage(named: "baseline_ios_share_black_20pt"), for: .normal)
+        shareButton.tintColor = UIColor(red: 5/255.0, green: 124/255.0, blue: 255/255.0, alpha: 1)
+        
+        descriptionView.text = app?.description
+        descriptionView.isEditable = false
     }
     
     override func viewWillAppear(_ animated: Bool) {

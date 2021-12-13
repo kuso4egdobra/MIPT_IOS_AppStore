@@ -18,25 +18,51 @@ class GroupAppsViewController: UIViewController {
     var openedSubTableView: UITableView!
     let GLOBAL_BACKGROUND_COLOR: UIColor = UIColor(red:230/255, green: 230/255, blue: 230/255, alpha: 1.000)
     
+    var deletedIndices: [IndexPath]! = nil
+    
     @IBOutlet weak var mainTableViewTopConstraint: NSLayoutConstraint!
     let dataSource = [
         GroupApps(
             title1: "Наше любимое",
             title2: "Приложения недели",
             apps: [
-                App(name: "youtube", type: "video", logoName: "youtube"),
-                App(name: "instagram", type: "social", logoName: "instagram"),
-                App(name: "snapchat", type: "social", logoName: "snapchat"),
-                App(name: "whatsapp", type: "video", logoName: "whatsapp"),
-                App(name: "playmarket", type: "social", logoName: "playmarket")
+                App(name: "Youtube", type: "Video", logoName: "youtube", companyName: "Google In.", description:  "Смотрите любимые видео, слушайте любимые песни, загружайте собственные ролики и делитесь ими с друзьями, близкими и целым миром."),
+                App(name: "Instagram", type: "Social", logoName: "instagram", companyName: "Facebook Ltd.", description:  "Создайте аккаунт или войдите в Instagram — это сервис, позволяющий легко и удобно снимать креативные фото и видео, редактировать их, а также делиться ими с друзьями и родственниками."),
+                App(name: "Snapchat", type: "Social", logoName: "snapchat", companyName: "Facebook Ltd.", description:  "Snapchat lets you easily talk with friends, view Live Stories from around the world, and explore news in Discover. Life's more fun when you live in the moment!"),
+                App(name: "Whatsapp", type: "Video", logoName: "whatsapp", companyName: "Facebook Ltd.", description:  "WhatsApp — это бесплатное приложение, которое предлагает простой, безопасный и надёжный обмен сообщениями и звонками, доступное на мобильных телефонах по всему миру."),
+                App(name: "Playmarket", type: "Social", logoName: "playmarket", companyName: "Google In.", description:  "Миллионы приложений, игр, музыкальных треков, фильмов, книг и журналов, а также другие интересные материалы ждут вас. ")
             ]),
         GroupApps(
             title1: "Группа №2",
             title2: "Приложения месяца",
             apps: [
-                App(name: "whatsapp", type: "video", logoName: "whatsapp"),
-                App(name: "playmarket", type: "social", logoName: "playmarket")
-            ])
+                App(name: "Whatsapp", type: "Video", logoName: "whatsapp", companyName: "Facebook Ltd.", description:  "WhatsApp — это бесплатное приложение, которое предлагает простой, безопасный и надёжный обмен сообщениями и звонками, доступное на мобильных телефонах по всему миру."),
+                App(name: "Playmarket", type: "Social", logoName: "playmarket", companyName: "Google In.", description:  "Миллионы приложений, игр, музыкальных треков, фильмов, книг и журналов, а также другие интересные материалы ждут вас. "),
+                App(name: "Whatsapp", type: "Video", logoName: "whatsapp", companyName: "Facebook Ltd.", description:  "WhatsApp — это бесплатное приложение, которое предлагает простой, безопасный и надёжный обмен сообщениями и звонками, доступное на мобильных телефонах по всему миру."),
+            ]),
+        GroupApps(
+            title1: "Ещё какая-то группа",
+            title2: "тут ток вотсап",
+            apps: [
+                App(name: "Whatsapp", type: "Video", logoName: "whatsapp", companyName: "Facebook Ltd.", description:  "WhatsApp — это бесплатное приложение, которое предлагает простой, безопасный и надёжный обмен сообщениями и звонками, доступное на мобильных телефонах по всему миру."),
+                App(name: "Whatsapp", type: "Video", logoName: "whatsapp", companyName: "Facebook Ltd.", description:  "WhatsApp — это бесплатное приложение, которое предлагает простой, безопасный и надёжный обмен сообщениями и звонками, доступное на мобильных телефонах по всему миру."),
+                App(name: "Whatsapp", type: "Video", logoName: "whatsapp", companyName: "Facebook Ltd.", description:  "WhatsApp — это бесплатное приложение, которое предлагает простой, безопасный и надёжный обмен сообщениями и звонками, доступное на мобильных телефонах по всему миру."),
+                App(name: "Whatsapp", type: "Video", logoName: "whatsapp", companyName: "Facebook Ltd.", description:  "WhatsApp — это бесплатное приложение, которое предлагает простой, безопасный и надёжный обмен сообщениями и звонками, доступное на мобильных телефонах по всему миру."),
+                App(name: "Whatsapp", type: "Video", logoName: "whatsapp", companyName: "Facebook Ltd.", description:  "WhatsApp — это бесплатное приложение, которое предлагает простой, безопасный и надёжный обмен сообщениями и звонками, доступное на мобильных телефонах по всему миру."),
+                App(name: "Whatsapp", type: "Video", logoName: "whatsapp", companyName: "Facebook Ltd.", description:  "WhatsApp — это бесплатное приложение, которое предлагает простой, безопасный и надёжный обмен сообщениями и звонками, доступное на мобильных телефонах по всему миру."),
+                App(name: "Whatsapp", type: "Video", logoName: "whatsapp", companyName: "Facebook Ltd.", description:  "WhatsApp — это бесплатное приложение, которое предлагает простой, безопасный и надёжный обмен сообщениями и звонками, доступное на мобильных телефонах по всему миру."),
+            ]),
+        GroupApps(
+            title1: "Группа №501",
+            title2: "Приложения",
+            apps: [
+                App(name: "Youtube", type: "Video", logoName: "youtube", companyName: "Google In.", description:  "Смотрите любимые видео, слушайте любимые песни, загружайте собственные ролики и делитесь ими с друзьями, близкими и целым миром."),
+                App(name: "Youtube", type: "Video", logoName: "youtube", companyName: "Google In.", description:  "Смотрите любимые видео, слушайте любимые песни, загружайте собственные ролики и делитесь ими с друзьями, близкими и целым миром."),
+                App(name: "Youtube", type: "Video", logoName: "youtube", companyName: "Google In.", description:  "Смотрите любимые видео, слушайте любимые песни, загружайте собственные ролики и делитесь ими с друзьями, близкими и целым миром."),
+                App(name: "Youtube", type: "Video", logoName: "youtube", companyName: "Google In.", description:  "Смотрите любимые видео, слушайте любимые песни, загружайте собственные ролики и делитесь ими с друзьями, близкими и целым миром."),
+                App(name: "Youtube", type: "Video", logoName: "youtube", companyName: "Google In.", description:  "Смотрите любимые видео, слушайте любимые песни, загружайте собственные ролики и делитесь ими с друзьями, близкими и целым миром."),
+                App(name: "Youtube", type: "Video", logoName: "youtube", companyName: "Google In.", description:  "Смотрите любимые видео, слушайте любимые песни, загружайте собственные ролики и делитесь ими с друзьями, близкими и целым миром."),
+            ]),
     ]
     
     override func viewDidLoad() {
@@ -82,7 +108,7 @@ class GroupAppsViewController: UIViewController {
     
     @IBAction func onCancelButtonClicked(_ sender: Any) {
         for constraint in openedSubTableView.constraints {
-            constraint.constant = 150
+            constraint.constant = 155
         }
         tableView.estimatedRowHeight = 200
         tableView.rowHeight = UITableView.automaticDimension
@@ -90,9 +116,9 @@ class GroupAppsViewController: UIViewController {
         self.mainTableViewTopConstraint.constant = 0
 
         flag = true
-        self.tableView.reloadData()
-        
-        openedSubTableView.reloadData()
+//        tableView.beginUpdates()
+        tableView.insertRows(at: deletedIndices, with: .automatic)
+//        tableView.endUpdates()
 
         self.tableView.isScrollEnabled = true
         openedSubTableView.isScrollEnabled = false
@@ -110,7 +136,7 @@ class GroupAppsViewController: UIViewController {
 }
 
 extension GroupAppsViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
         tableView.deselectRow(at: indexPath, animated: true)
         if (tableView == self.tableView) {
@@ -132,6 +158,7 @@ extension GroupAppsViewController: UITableViewDelegate {
                 
                 
                 let indexesToDelete = (0..<dataSource.count).filter { $0 != subTableView.numRow }.map { IndexPath(indexes: [0, $0])}
+                deletedIndices = indexesToDelete
                 
                 self.tableView.deleteRows(at: indexesToDelete, with: .fade)
                 
@@ -200,6 +227,7 @@ extension GroupAppsViewController: UITableViewDataSource {
             cell.subTable.delegate = self
             cell.subTable.dataSource = self
             cell.subTable.numRow = indexPath.row
+            cell.subTable.reloadData()
             print("num row \(indexPath.row)")
             cell.selectionStyle = .none
             
@@ -208,7 +236,6 @@ extension GroupAppsViewController: UITableViewDataSource {
             return cell
         }
         else {
-            print(4)
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! AppTableViewCell
             
             let subTableView = tableView as! SubGroupTableView
@@ -226,6 +253,10 @@ extension GroupAppsViewController: UITableViewDataSource {
             cell.imageCell.layer.cornerRadius = 8.0
             
             cell.selectionStyle = .none
+            
+            cell.downloadButton.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
+            cell.downloadButton.layer.cornerRadius = 14.0
+//            print(deletedIndices)
             
             return cell
         }

@@ -14,7 +14,8 @@ class AppTableViewCell: UITableViewCell {
     @IBOutlet weak var imageCell: UIImageView!
     @IBOutlet weak var cellLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!
-//
+    @IBOutlet weak var downloadButton: UIButton!
+    //
 //    override func setSelected(_ selected: Bool, animated: Bool) {
 //        super.setSelected(selected, animated: animated)
 //

@@ -18,6 +18,7 @@ class AppDetailViewController: UIViewController {
     @IBOutlet weak var downloadButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var descriptionView: UITextView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     func setApp(app: App) {
         self.app = app
@@ -43,6 +44,8 @@ class AppDetailViewController: UIViewController {
         
         descriptionView.text = app?.description
         descriptionView.isEditable = false
+        
+        spinner.isHidden = true
     }
     
     @IBAction func sharePressed(_ sender: Any) {
@@ -52,6 +55,11 @@ class AppDetailViewController: UIViewController {
         self.present(activityVC, animated: true, completion: nil)
     }
     
+    @IBAction func downloadPressed(_ sender: Any) {
+        spinner.startAnimating()
+        spinner.isHidden = false
+        downloadButton.isHidden = true
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

@@ -322,6 +322,9 @@
                                 <state key="normal" title="Загрузить">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="downloadPressed:" destination="Me8-YR-zat" eventType="touchUpInside" id="mzm-Dl-Rsg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgM-Dr-Ksk">
                                 <rect key="frame" x="248" y="189" width="30" height="30"/>
@@ -336,11 +339,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Q3O-CW-lxA">
+                                <rect key="frame" x="180" y="205" width="20" height="20"/>
+                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="tD5-v4-JhW" firstAttribute="trailing" secondItem="7bO-SZ-JcC" secondAttribute="trailing" constant="16" id="9Bh-NH-UBJ"/>
                             <constraint firstItem="x4B-Sg-CsN" firstAttribute="top" secondItem="tD5-v4-JhW" secondAttribute="top" constant="32" id="ELx-XL-qy4"/>
+                            <constraint firstItem="Q3O-CW-lxA" firstAttribute="leading" secondItem="QJn-5J-3xX" secondAttribute="trailing" constant="64" id="FNf-nT-mNQ"/>
                             <constraint firstItem="ugA-6u-UdS" firstAttribute="leading" secondItem="QJn-5J-3xX" secondAttribute="trailing" constant="24" id="H4F-rF-01T"/>
                             <constraint firstItem="QJn-5J-3xX" firstAttribute="top" secondItem="tD5-v4-JhW" secondAttribute="top" constant="32" id="JYT-DA-0OY"/>
                             <constraint firstItem="bgM-Dr-Ksk" firstAttribute="top" secondItem="ugA-6u-UdS" secondAttribute="bottom" constant="-31" id="K9k-ax-h5K"/>
@@ -350,6 +358,7 @@
                             <constraint firstItem="x4B-Sg-CsN" firstAttribute="leading" secondItem="QJn-5J-3xX" secondAttribute="trailing" constant="24" id="Xd2-uR-Fdv"/>
                             <constraint firstItem="7bO-SZ-JcC" firstAttribute="top" secondItem="QJn-5J-3xX" secondAttribute="bottom" constant="16" id="cft-Hz-J8x"/>
                             <constraint firstItem="bgM-Dr-Ksk" firstAttribute="leading" secondItem="ugA-6u-UdS" secondAttribute="trailing" constant="8" id="evF-rn-Jaj"/>
+                            <constraint firstItem="Q3O-CW-lxA" firstAttribute="top" secondItem="rFD-Mc-01R" secondAttribute="bottom" constant="16" id="lfl-pR-MRe"/>
                             <constraint firstItem="rFD-Mc-01R" firstAttribute="top" secondItem="x4B-Sg-CsN" secondAttribute="bottom" id="mDO-Gh-CEA"/>
                             <constraint firstItem="7bO-SZ-JcC" firstAttribute="leading" secondItem="tD5-v4-JhW" secondAttribute="leading" constant="16" id="qwJ-o9-kuI"/>
                             <constraint firstItem="QJn-5J-3xX" firstAttribute="leading" secondItem="tD5-v4-JhW" secondAttribute="leading" constant="16" id="uzh-FU-EXP"/>
@@ -364,6 +373,7 @@
                         <outlet property="descriptionView" destination="7bO-SZ-JcC" id="XjI-eN-mS4"/>
                         <outlet property="downloadButton" destination="ugA-6u-UdS" id="wRw-j3-rzN"/>
                         <outlet property="shareButton" destination="bgM-Dr-Ksk" id="Nzi-s5-jj6"/>
+                        <outlet property="spinner" destination="Q3O-CW-lxA" id="Uzb-au-06z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10W-M8-u0s" userLabel="First Responder" sceneMemberID="firstResponder"/>

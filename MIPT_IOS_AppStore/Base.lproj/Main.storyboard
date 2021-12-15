@@ -92,6 +92,9 @@
                                                                         <state key="normal" title="Загрузить">
                                                                             <color key="titleColor" red="0.019607843140000001" green="0.48627450979999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="downloadPresser:" destination="urX-8c-kIO" eventType="touchUpInside" id="AYk-kY-aJe"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="youtube" translatesAutoresizingMaskIntoConstraints="NO" id="l7l-xs-TPQ">
                                                                         <rect key="frame" x="0.0" y="3.5" width="40" height="40"/>
@@ -100,6 +103,9 @@
                                                                             <constraint firstAttribute="width" constant="40" id="z3g-k4-7w0"/>
                                                                         </constraints>
                                                                     </imageView>
+                                                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="jOl-9i-xB5">
+                                                                        <rect key="frame" x="294" y="8" width="20" height="20"/>
+                                                                    </activityIndicatorView>
                                                                 </subviews>
                                                                 <constraints>
                                                                     <constraint firstAttribute="bottom" secondItem="fdn-Pt-8zP" secondAttribute="bottom" constant="4" id="32p-bT-1MW"/>
@@ -109,7 +115,9 @@
                                                                     <constraint firstItem="l7l-xs-TPQ" firstAttribute="leading" secondItem="sN9-nV-doh" secondAttribute="leading" id="R0K-ku-d4a"/>
                                                                     <constraint firstItem="7k7-O4-UdP" firstAttribute="top" secondItem="sN9-nV-doh" secondAttribute="top" constant="8" id="Xaq-4s-wIh"/>
                                                                     <constraint firstItem="FV6-PD-DL5" firstAttribute="top" secondItem="sN9-nV-doh" secondAttribute="top" constant="4" id="YRc-Jc-aA5"/>
+                                                                    <constraint firstItem="jOl-9i-xB5" firstAttribute="top" secondItem="sN9-nV-doh" secondAttribute="topMargin" id="jm8-ae-p1f"/>
                                                                     <constraint firstItem="l7l-xs-TPQ" firstAttribute="top" secondItem="sN9-nV-doh" secondAttribute="top" constant="3.5" id="knD-6P-5Ie"/>
+                                                                    <constraint firstAttribute="trailingMargin" secondItem="jOl-9i-xB5" secondAttribute="trailing" constant="36" id="l2e-I5-fi9"/>
                                                                     <constraint firstAttribute="bottom" secondItem="7k7-O4-UdP" secondAttribute="bottom" constant="8" id="meS-Ve-BXy"/>
                                                                     <constraint firstAttribute="bottom" secondItem="l7l-xs-TPQ" secondAttribute="bottom" id="v9z-8h-fq4"/>
                                                                     <constraint firstAttribute="trailing" secondItem="7k7-O4-UdP" secondAttribute="trailing" constant="16" id="yod-Ly-pPs"/>
@@ -119,6 +127,7 @@
                                                                 <outlet property="cellLabel" destination="FV6-PD-DL5" id="U8c-eC-NKE"/>
                                                                 <outlet property="downloadButton" destination="7k7-O4-UdP" id="PSx-yx-bPZ"/>
                                                                 <outlet property="imageCell" destination="l7l-xs-TPQ" id="25i-cH-YlL"/>
+                                                                <outlet property="spinner" destination="jOl-9i-xB5" id="62M-vZ-Rdm"/>
                                                                 <outlet property="typeLabel" destination="fdn-Pt-8zP" id="sIy-6L-Bpc"/>
                                                             </connections>
                                                         </tableViewCell>

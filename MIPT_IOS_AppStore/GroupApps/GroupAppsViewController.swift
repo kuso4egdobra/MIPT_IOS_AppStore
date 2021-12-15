@@ -256,6 +256,9 @@ extension GroupAppsViewController: UITableViewDataSource {
             
             cell.downloadButton.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
             cell.downloadButton.layer.cornerRadius = 14.0
+            
+            cell.spinner.isHidden = true
+            cell.downloadButton.isHidden = false
 //            print(deletedIndices)
             
             return cell

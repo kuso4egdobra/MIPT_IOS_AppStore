@@ -15,11 +15,20 @@ class AppTableViewCell: UITableViewCell {
     @IBOutlet weak var cellLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var downloadButton: UIButton!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     //
 //    override func setSelected(_ selected: Bool, animated: Bool) {
 //        super.setSelected(selected, animated: animated)
 //
 //        // Configure the view for the selected state
+    
+    
 //    }
-
+    
+    @IBAction func downloadPresser(_ sender: Any) {
+        spinner.startAnimating()
+        spinner.isHidden = false
+        downloadButton.isHidden = true
+    }
+    
 }

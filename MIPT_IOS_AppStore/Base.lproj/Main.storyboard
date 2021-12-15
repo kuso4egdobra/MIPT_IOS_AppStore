@@ -325,6 +325,9 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgM-Dr-Ksk">
                                 <rect key="frame" x="248" y="189" width="30" height="30"/>
+                                <connections>
+                                    <action selector="sharePressed:" destination="Me8-YR-zat" eventType="touchUpInside" id="bCh-5C-rmA"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7bO-SZ-JcC">
                                 <rect key="frame" x="16" y="236" width="382" height="561"/>

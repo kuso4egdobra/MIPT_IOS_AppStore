@@ -45,6 +45,14 @@ class AppDetailViewController: UIViewController {
         descriptionView.isEditable = false
     }
     
+    @IBAction func sharePressed(_ sender: Any) {
+        let activityVC = UIActivityViewController(activityItems: [app?.name], applicationActivities: nil)
+        activityVC.popoverPresentationController?.sourceView = self.view
+        
+        self.present(activityVC, animated: true, completion: nil)
+    }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
